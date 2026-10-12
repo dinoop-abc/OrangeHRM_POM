@@ -31,6 +31,8 @@ public class BaseClass {
 	@AfterMethod
 	public void tearDown()
 	{
+		// Application logout
+        //driver.findElement(By.id("logout")).click();  if we need to Log out application
 	    driver.quit();
 	}
 	public WebDriver getDriver()

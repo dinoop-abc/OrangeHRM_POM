@@ -7,7 +7,7 @@ public class ExtentManager {
         if(extent == null) {
 
             ExtentSparkReporter spark =
-                    new ExtentSparkReporter("ExtentReport.html"); //Create a Report
+                    new ExtentSparkReporter("target/ExtentReport.html"); //Create a Report
 
             spark.config().setReportName("OrangeHRM Automation Report"); //Heading
             spark.config().setDocumentTitle("Automation Execution Report"); //Broeser tab title

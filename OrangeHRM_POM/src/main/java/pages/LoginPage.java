@@ -63,6 +63,7 @@ public class LoginPage {
     public String getInvalidCredentialMessage()
     {
         return invalidCredentialMessage.getText();
+        //aded a New Line.
     }
 
 }
