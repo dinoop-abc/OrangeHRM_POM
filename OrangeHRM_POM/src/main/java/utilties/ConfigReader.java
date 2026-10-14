@@ -23,9 +23,9 @@ public class ConfigReader {
         }
     }
 
-    public static String getProperty(String key)
+    public static String getProperty(String key)  //Get a value from another class
     {
-        return prop.getProperty(key);
+        return prop.getProperty(key); //sends that value back to the calling code.
     }
 
 }

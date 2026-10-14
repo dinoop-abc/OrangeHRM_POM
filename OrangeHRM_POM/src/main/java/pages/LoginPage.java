@@ -31,27 +31,25 @@ public class LoginPage {
 
     public void enterUsername(String username)
     {
-        txtUsername.clear();
+    	 wait.waitForVisibility(txtUsername).clear();
         txtUsername.sendKeys(username);
+       
     }
-
-    public void enterPassword(String password)
+     public void enterPassword(String password)
     {
-        txtPassword.clear();
+        wait.waitForVisibility(txtPassword).clear();
         txtPassword.sendKeys(password);
     }
     public void clickLogin()
     {
-        btnLogin.click();
+    	wait.waitForClick(btnLogin).click();
     }
 
     public void login(String username, String password)
     {
-        //enterUsername(username);          //without wait
-        wait.waitForVisibility(txtUsername).sendKeys(username); //with wait
+    	enterUsername(username);
         enterPassword(password);
-        //clickLogin();
-        wait.waitForClick(btnLogin).click();  //with explicit wait
+        clickLogin();
     }
  
     public String getRequiredMessage()

@@ -14,9 +14,11 @@ public class BaseClass {
 	public void setup()
 	{
 	driver = new ChromeDriver();
+	
 	/*driver.manage().window().maximize();  //Load from config file
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");*/
+	
 	if(ConfigReader.getProperty("maximize").equals("true"))
 	{
 	    driver.manage().window().maximize();
@@ -31,10 +33,11 @@ public class BaseClass {
 	@AfterMethod
 	public void tearDown()
 	{
+		if (driver != null) {
 		// Application logout
         //driver.findElement(By.id("logout")).click();  if we need to Log out application
 	    driver.quit();
-	}
+	}}
 	public WebDriver getDriver()
 	{
 	    return driver;
