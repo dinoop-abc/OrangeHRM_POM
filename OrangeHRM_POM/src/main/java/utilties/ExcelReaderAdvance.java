@@ -30,6 +30,29 @@ public String[] getLoginData(int rowNumber) //Read one row from Excel
         return data;// Return both values
     }
 
+          //New Skill method
+public String[] getSkillData(int rowNumber) {
+
+    Sheet skillSheet = workbook.getSheet("SkillData");
+
+    Row row = skillSheet.getRow(rowNumber);
+
+    String data[] = new String[4];
+
+    for (int i = 0; i < 4; i++) {
+
+        if (row.getCell(i) == null)
+            data[i] = "";
+        else
+            data[i] = row.getCell(i).toString();
+    }
+
+    return data;
+}
+
+
+
+
  public void closeWorkbook() throws Exception //Close Workbook
     {
         workbook.close();

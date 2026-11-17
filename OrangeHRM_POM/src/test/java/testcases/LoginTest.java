@@ -14,21 +14,13 @@ import org.apache.logging.log4j.Logger;
 import utilties.LogUtil;
 
 
+
    @Listeners(TestListener.class)
   //@Listeners(listeners.TestListener.class)
 public class LoginTest extends BaseClass {  //Because LoginTest needs driver,setip,teardown
 	   private static final Logger log =
 		        LogUtil.getLogger(LoginTest.class);
-	   ExcelReaderAdvance er; //Create Ref Variable to call 3 method-Excel
-	
-	@BeforeClass       //Runs only ONCE before all test methods.it is for advance excel
-    public void openExcel() throws Exception
-    {
-        // Constructor automatically opens Excel
-        er = new ExcelReaderAdvance();  //constructor opens the workbook and selects the sheet
-    }
-
-
+	  
 	@Test(priority = 1)
 	public void verifyBlankLogin() throws Exception
 	{
@@ -94,10 +86,11 @@ public class LoginTest extends BaseClass {  //Because LoginTest needs driver,set
                            DashboardPage dashboard = new DashboardPage(driver);
                            Assert.assertTrue(dashboard.isDashboardDisplayed());
 	}
-	@AfterClass(alwaysRun = true)  //Runs once after all test methods
+	//@AfterClass(alwaysRun = true)  //Runs once after all test methods
 
-    public void closeExcel() throws Exception
+   /*public void closeExcel() throws Exception
     {
 		if (er != null) {            //avoids a NullPointerException if Excel initialization did not complete.
 	        er.closeWorkbook();      // Close workbook only once
-    }}}
+    }*/
+    }

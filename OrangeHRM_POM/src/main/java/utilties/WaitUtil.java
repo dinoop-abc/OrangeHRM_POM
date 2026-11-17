@@ -55,4 +55,9 @@ public class WaitUtil {
             ExpectedConditions.titleContains(title));
     }
 
+    public boolean waitForUrlContains(String partialUrl) {
+
+        return wait
+                .until(ExpectedConditions.urlContains(partialUrl));
+    }
     }
