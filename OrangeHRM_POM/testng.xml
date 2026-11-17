@@ -6,7 +6,7 @@
     <test name="OrangeHRM Regression Tests">
 
         <classes>
-           
+           <class name="testcases.LoginTest"/>
             <class name="testcases.SkillsTest"/>
         </classes>
 
